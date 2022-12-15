@@ -1,0 +1,36 @@
+Copyright 2022-2023 Raducanu George-Cristian 321CA
+-------------------------------------------------------------------------
+HOMEWORK 2 "POO TV"
+-------------------------------------------------------------------------
+    This program implemented in Java is a small model of a
+mini streaming platform, that offers the option to navigate
+through pages, corresponding to different actions. The
+implementation is modular, making use of the Singleton
+pattern.
+    The input data is read using the classes from the "input"
+packet. The database is implemented using the pattern mentioned
+above, due to the fact that the hierarchy of classes should have
+a global access to it.
+    After retrieving the data, the users and movies are inserted into
+the database we work with.
+Then we iterate through the actions, calling their corresponding
+methods.
+    There are separate classes and methods for each type of action.
+The ChangePage and OnPage classes take care of the main commands that
+the user applies.
+    The current page is stored in order to check whether a page switch
+is valid. According to the requirements, the first initial state of the
+page is "homepage". The current user is null due to the fact that
+no user is logged in.
+    All methods have corresponding parameters which are independent one from
+another. The program in my design revolves around the "currentPage" class.
+It contains the page name, the current user, the movie list and of course,
+the current movie. These details ares very helpful for determining the state
+of the page we are on, in order to keep track of the allowed operations.
+    For each "on page" action the pattern consists of checking if we are in a
+correct state, otherwise we return a corresponding error. If all the conditions
+are correct we continue with the processing of the database finally displaying
+the result in the json format.
+    The "change page" commands have smaller complexity. The first step is
+checking that the right conditions are satisfied and then proceeding with
+the page switch using the singleton changePage.
